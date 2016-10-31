@@ -1,0 +1,16 @@
+{
+    "name": "lem/my-app",
+    "description": "Projet php",
+    "authors": [
+        {
+            "name": "sheep hopotame",
+            "email": "victor.moutton@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "autoload": {
+        "files": [ "model.php", "controller.php"]
+    }
+}

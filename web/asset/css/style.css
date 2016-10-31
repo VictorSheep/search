@@ -1,0 +1,30 @@
+body{background-color: #E0D6D7;}
+h1,h2,h3,h4,h5,h6,p{
+	font-family: sans-serif;
+}
+a{text-decoration: none;}
+h2{
+	font-size: 2em;
+}
+.tit{
+	width:200px;
+	background-color: #E0D6D7;
+	color:#8C543F;
+	padding-left: 4px;
+	border-bottom: 2px solid #8C543F;
+}
+.tit:hover{
+	padding-left: 10px;
+	width: 194px;
+	animation-name: moove;
+	animation-duration: 0.2s;
+}
+
+@keyframes moove {
+    from {
+    	padding-left: 4px;
+    	width:200px;}
+    to {
+    	padding-left: 10px;
+		width: 194px;}
+}
