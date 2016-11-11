@@ -21,6 +21,4 @@ CREATE TABLE IF NOT EXISTS `chall_list` (
 INSERT INTO `chall_list` (`name`) VALUES
 ('Generation d''un damier'),
 ('Pavage de cercle'),
-('Dessiner une pyramide'),
-('Suite de syracuse'),
-('Cryptage affine');
+('Suite de syracuse');

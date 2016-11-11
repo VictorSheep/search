@@ -32,12 +32,13 @@ function show_chall($id)
 			}
 			$size = count($data_table);
 
+			include 'views/checkerboard.php';
 			break;
 
 		case 2: // Pavage de cercles
 			if(!empty($_GET['nb']))
 			{
-				header('location: /index.php/single?id='.$id);
+				header('location: /index.php/chall?id='.$id);
 			}
 			if($_SERVER['REQUEST_METHOD'] == 'POST')
 			{
@@ -52,17 +53,14 @@ function show_chall($id)
 				$nb = $_POST['number'];
 			}
 
+			include 'views/circlepaving.php';
 			break;
 
-		case 3:
-
-			break;
-
-		case 4: // suite de cyracuse
+		case 3: // suite de cyracuse
 			
 			if(!empty($_GET['nb']))
 			{
-				header('location: /index.php/single?id='.$id);
+				header('location: /index.php/chall?id='.$id);
 			}
 			if($_SERVER['REQUEST_METHOD'] == 'POST')
 			{
@@ -78,15 +76,16 @@ function show_chall($id)
 				$result_table = get_cyracuse_suite($nb);
 			}
 
-			break;
-		
-		case 5:
-			
+			include 'views/cyracuse.php';
 			break;
 
 		default:
-			
+
 			break;
 	}
-	include 'views/chall'.$id.'.php';
+}
+
+function show_checkerboard()
+{
+
 }

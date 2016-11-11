@@ -6,7 +6,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ('/' === $uri) {
     home_action();
-} elseif ('/index.php/single' === $uri && isset($_GET['id'])) {
+} elseif ('/index.php/chall' === $uri && isset($_GET['id'])) {
     show_chall($_GET['id']);
 } else {
     header('HTTP/1.1 404 Not Found');

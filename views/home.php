@@ -5,13 +5,13 @@
 		<?php foreach ($challenges as $chall):?>
 			<article>
 				<h2>
-					<a href="/index.php/single?id=<?php echo $chall['id'] ?>&amp;nb=2">
+					<a href="/index.php/chall?id=<?php echo $chall['id'] ?>&amp;nb=2">
 						<?php echo $chall['name']; ?>
 					</a>
 				</h2>
 				<p>
 					<br>
-					<a href="/index.php/single?id=<?php echo $chall['id'] ?>&amp;nb=2">
+					<a href="/index.php/chall?id=<?php echo $chall['id'] ?>&amp;nb=2">
 						voir comme c'est beau...
 					</a>
 				</p>
