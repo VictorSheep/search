@@ -6,15 +6,8 @@
     	<link rel="stylesheet" type="text/css" href="/asset/css/style.css">
     </head>
     <body>
-    <nav>
-    	<ul class="nav nav-tabs">
-    		<?php foreach ($categories as $category) : ?>
-    			<li><a role="presentation" href="/index.php/category?id=<?php echo $category['id'] ?>">
-    				<?php echo $category['title'] ?>
-    			</a></li>
-    		<?php  endforeach ?>
-    	</ul>
-    </nav>
-        <?php echo $content;  ?>
+        <div class="container">
+            <?php echo $content; ?>
+        </div>
     </body>
 </html>

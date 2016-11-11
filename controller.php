@@ -1,17 +1,92 @@
 <?php
-
 function home_action()
 {
-    $posts =  get_all('posts');
-    $categories =  get_all('categories');
-    $authors = get_all('authors');
+  $challenges =  get_all_challenges();
 
-    include 'views/home.php';
-
+  include 'views/home.php';
 }
 
-function show_action($id){
-	$article = get_single_post($id);
+function show_chall($id)
+{
+	$chall = get_chall($id);
 
-	include 'views/item.php';
+	switch ($id) {
+		case 1: // Génération d'un damier
+
+			$nb = $_GET['nb'];
+			// création du fichier data.txt
+			$data = create_damier($nb);
+
+			$data = fopen("../data/data.txt", "r");
+			$data_table = [];
+			$line = '';
+			$i=0;
+			while(! feof($data)) // tant qu'on est pas à la fin du fichier
+			{
+				$line	= fgets($data);
+				$line = rtrim($line,"\r\n");
+				for ($j=0; $j < strlen($line); $j++) { 
+					$data_table[$i][$j] = $line[$j];
+				}
+				$i++;
+			}
+			$size = count($data_table);
+
+			break;
+
+		case 2: // Pavage de cercles
+			if(!empty($_GET['nb']))
+			{
+				header('location: /index.php/single?id='.$id);
+			}
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				$_SESSION = []; // On initialise une variable de session
+
+				if ($_POST['number']<=0)
+				{
+					$_SESSION['error'] = "Veuillez renseigner un nombre superieur à 0";
+					break;
+				}
+
+				$nb = $_POST['number'];
+			}
+
+			break;
+
+		case 3:
+
+			break;
+
+		case 4: // suite de cyracuse
+			
+			if(!empty($_GET['nb']))
+			{
+				header('location: /index.php/single?id='.$id);
+			}
+			if($_SERVER['REQUEST_METHOD'] == 'POST')
+			{
+				$_SESSION = []; // On initialise une variable de session
+
+				if ($_POST['number']<=0)
+				{
+					$_SESSION['error'] = "Veuillez renseigner un nombre superieur à 0";
+					break;
+				}
+
+				$nb = $_POST['number'];
+				$result_table = get_cyracuse_suite($nb);
+			}
+
+			break;
+		
+		case 5:
+			
+			break;
+
+		default:
+			
+			break;
+	}
+	include 'views/chall'.$id.'.php';
 }

@@ -1,4 +1,7 @@
-body{background-color: #E0D6D7;}
+/* 
+https://color.adobe.com/fr/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/fd80d090-7a1f-11e4-bb4b-3d3184a7b015/theme/520c5e72-458a-4e5e-83ed-a9d20b772bd8/edit/?base=2&rule=Custom&selected=4&name=Copie%20de%20Juju&mode=rgb&rgbvalues=0.45098,0.239216,0.235294,0.560784,0.45098,0.380392,0.952941,0.768627,0.658824,0.505882,0.662745,0.654902,0.376471,0.494118,0.482353&swatchOrder=0,1,2,3,4
+ */
+body{background-color: #FcF8F2;}
 h1,h2,h3,h4,h5,h6,p{
 	font-family: sans-serif;
 }
