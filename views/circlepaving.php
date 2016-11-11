@@ -22,20 +22,22 @@
 
     <?php else: ?>
 
-    <svg width="900" height="900">
-      <?php $r=900/$nb/2; ?>
-      <?php for ($i=0; $i <= $nb; $i++) :?>
+      <?php if (isset($nb)) : ?>
+      <svg width="900" height="900">
+        <?php $r=900/$nb/2; ?>
+        <?php for ($i=0; $i <= $nb; $i++) :?>
 
-        <?php $cx=(900/$nb/2)*($i*2+1); ?>
-        <?php for ($j=0; $j <= $nb; $j++) :?>
+          <?php $cx=(900/$nb/2)*($i*2+1); ?>
+          <?php for ($j=0; $j <= $nb; $j++) :?>
 
-          <?php $cy=(900/$nb/2)*($j*2+1); ?>
-          <circle cx=<?php echo $cx ?> cy= <?php echo $cy ?> r= <?php echo $r ?>  fill="#607E7B" />
+            <?php $cy=(900/$nb/2)*($j*2+1); ?>
+            <circle cx=<?php echo $cx ?> cy= <?php echo $cy ?> r= <?php echo $r ?>  fill="#607E7B" />
 
+          <?php endfor ?>
+          
         <?php endfor ?>
-        
-      <?php endfor ?>
-    </svg>
+      </svg>
+      <?php endif ?>
     
     <?php endif ?>
 

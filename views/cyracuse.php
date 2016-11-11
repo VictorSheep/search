@@ -31,19 +31,23 @@
 
     <?php if (empty($_SESSION['error'])): ?>
 
-      <?php for ($i=0; $i < count($result_table); $i++): ?>
-        <?php $cx= 1100/count($result_table)*$i+50 ; ?>
-        <?php $cy= (500/max($result_table)*$result_table[$i]-550)*(-1) ; ?>
+      <?php if (isset($nb)) : ?>
 
-        <circle cx=<?php echo $cx ?> cy= <?php echo $cy ?> r=4  fill="#FFF" />
+        <?php for ($i=0; $i < count($result_table); $i++): ?>
+          <?php $cx= 1100/count($result_table)*$i+50 ; ?>
+          <?php $cy= (500/max($result_table)*$result_table[$i]-550)*(-1) ; ?>
 
-        <?php if (!empty($cy_p)):?>
-          <line x1=<?php echo $cx_p ?> y1=<?php echo $cy_p ?> x2=<?php echo $cx ?> y2=<?php echo $cy ?> style="stroke:#FFF;stroke-width:1" />
-        <?php endif ?>
+          <circle cx=<?php echo $cx ?> cy= <?php echo $cy ?> r=4  fill="#FFF" />
 
-        <?php $cx_p= $cx ; ?>
-        <?php $cy_p= $cy ; ?>
-      <?php endfor ?>
+          <?php if (!empty($cy_p)):?>
+            <line x1=<?php echo $cx_p ?> y1=<?php echo $cy_p ?> x2=<?php echo $cx ?> y2=<?php echo $cy ?> style="stroke:#FFF;stroke-width:1" />
+          <?php endif ?>
+
+          <?php $cx_p= $cx ; ?>
+          <?php $cy_p= $cy ; ?>
+        <?php endfor ?>
+
+      <?php endif ?>
       
     <?php endif ?>
 
